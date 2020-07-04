@@ -53,8 +53,8 @@ app.get("/profile/:id",(req,res)=>{profile.handleProfile(req,res,knex)})
 app.put('/image',(req,res)=>{image.handleImage(req,res,knex)});
 app.post('/imageurl',(req,res)=>{handleApiCall(req,res)});
 
-app.listen(3000,()=>{
-	console.log('app is listening at port 3000');
+app.listen(process.env.PORT||3000,()=>{
+	console.log('app is listening at port ${process.env.PORT}');
 });
 
 // /signin ->post = success/fail
