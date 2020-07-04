@@ -34,14 +34,8 @@ app.use(bodyparser.json());
 app.use(cors());
 
 
-app.get('/',(req,res)=>{
-	bcrypt.compare("apples", "$2a$10$RGGkCZdElVX/SHqhqlJ8jOQCkRaYLkuzzV4Gm64lkzer.2kHYzbk.", function(err, res) {
-		console.log(res);
-	});
-	bcrypt.compare("bacon", "$2a$10$RGGkCZdElVX/SHqhqlJ8jOQCkRaYLkuzzV4Gm64lkzer.2kHYzbk.", function(err, res) {
-		console.log(res);
-	});
-	res.send(database.users);
+app.get('/',(req,res)=>{ 
+	res.send("it is working!");
 })
 
 app.post('/signin',signin.handleSignin(knex,bcrypt));
